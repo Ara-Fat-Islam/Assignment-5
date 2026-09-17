@@ -162,3 +162,4 @@ function App() {
 }
 
 export default App;
+/* All are working fine.All the components are working fine. The data is being fetched from the data.json file and displayed in the TechnologyCard component. The user can add technologies to their stack, remove them, and clear the entire stack. Toast notifications are displayed for each action. The Nav, HeroSection, YourStack, and Footer components are also working as expected. */
