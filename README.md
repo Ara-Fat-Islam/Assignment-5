@@ -6,11 +6,11 @@ Users can view technology details, add technologies to their stack, remove indiv
 
 ## Live Website
 
-Add your live website link here.
+https://dev-stack-arafat.netlify.app/
 
 ## GitHub Repository
 
-Add your GitHub repository link here.
+https://github.com/Ara-Fat-Islam/Assignment-5
 
 ## Technologies Used
 
