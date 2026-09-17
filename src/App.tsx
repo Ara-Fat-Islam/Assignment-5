@@ -1,4 +1,3 @@
-import Footer from "./Components/Footer";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -6,6 +5,7 @@ import Nav from "./Components/Nav";
 import HeroSection from "./Components/HeroSection";
 import TechnologyCard from "./Components/TechnologyCard";
 import YourStack from "./Components/YourStack";
+import Footer from "./Components/Footer";
 import type { IDataType } from "./Components/Type/ITechnology";
 
 function App() {
@@ -37,9 +37,7 @@ function App() {
   const handleRemoveFromStack = (id: string) => {
     const technology = stack.find((item) => item.id === id);
 
-    setStack((prev) =>
-      prev.filter((item) => item.id !== id)
-    );
+    setStack((prev) => prev.filter((item) => item.id !== id));
 
     if (technology) {
       toast.error(`${technology.name} removed from your stack.`);
@@ -107,7 +105,56 @@ function App() {
         </div>
       </section>
 
-           <Footer />
+      <section
+        id="projects"
+        className="py-16 bg-white"
+      >
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            Projects
+          </h2>
+
+          <p className="mt-3 max-w-2xl mx-auto text-gray-600 leading-7">
+            Explore projects and discover the technologies used to build
+            modern and scalable applications.
+          </p>
+        </div>
+      </section>
+
+      <section
+        id="about"
+        className="py-16 bg-gray-50"
+      >
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            About Dev Stack
+          </h2>
+
+          <p className="mt-3 max-w-2xl mx-auto text-gray-600 leading-7">
+            Dev Stack helps developers explore modern technologies,
+            compare different options, and build a development stack
+            suitable for their projects.
+          </p>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        className="py-16 bg-white"
+      >
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            Contact
+          </h2>
+
+          <p className="mt-3 max-w-2xl mx-auto text-gray-600 leading-7">
+            Have a question or suggestion? Feel free to get in touch
+            with the Dev Stack team.
+          </p>
+        </div>
+      </section>
+
+      <Footer />
 
       <ToastContainer position="top-right" />
     </div>
