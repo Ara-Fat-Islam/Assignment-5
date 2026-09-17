@@ -1,10 +1,11 @@
-export interface ITechnology {
+export interface IDataType {
   id: string;
   name: string;
-  category: string;
   description: string;
-  icon: string;
-  rating: number;
+  category: string;
   difficulty: string;
   badge: string;
+  icon: string;
+  alt: string;
+  rating: number;
 }
