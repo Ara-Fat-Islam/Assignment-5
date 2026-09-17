@@ -1,3 +1,4 @@
+import Footer from "./Components/Footer";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -105,6 +106,8 @@ function App() {
           </div>
         </div>
       </section>
+
+           <Footer />
 
       <ToastContainer position="top-right" />
     </div>
