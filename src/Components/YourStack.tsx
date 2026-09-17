@@ -18,7 +18,7 @@ const YourStack = ({
           Your Stack
         </h2>
 
-        <span className="text-sm text-gray-500">
+        <span className="px-2.5 py-1 rounded-full bg-gray-100 text-sm font-medium text-gray-600">
           {stack.length}
         </span>
       </div>
@@ -32,6 +32,10 @@ const YourStack = ({
           <p className="text-sm text-gray-400">
             Your stack is empty.
           </p>
+
+          <p className="mt-1 text-xs text-gray-400">
+            Add technologies from the list to build your stack.
+          </p>
         </div>
       ) : (
         <>
@@ -44,11 +48,11 @@ const YourStack = ({
                 <img
                   src={technology.icon}
                   alt={technology.alt}
-                  className="w-10 h-10 object-contain"
+                  className="w-10 h-10 object-contain shrink-0"
                 />
 
-                <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900">
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-gray-900 truncate">
                     {technology.name}
                   </h3>
 
@@ -59,7 +63,7 @@ const YourStack = ({
 
                 <button
                   onClick={() => onRemove(technology.id)}
-                  className="text-gray-400 hover:text-red-500 text-lg"
+                  className="text-gray-400 hover:text-red-500 text-lg shrink-0"
                 >
                   ✕
                 </button>
