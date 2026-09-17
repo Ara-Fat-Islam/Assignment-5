@@ -10,11 +10,15 @@ import type { IDataType } from "./Components/Type/ITechnology";
 function App() {
   const [technologies, setTechnologies] = useState<IDataType[]>([]);
   const [stack, setStack] = useState<IDataType[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("/data.json")
       .then((res) => res.json())
-      .then((data) => setTechnologies(data));
+      .then((data) => {
+        setTechnologies(data);
+        setLoading(false);
+      });
   }, []);
 
   const handleAddToStack = (technology: IDataType) => {
@@ -72,18 +76,26 @@ function App() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-            <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {technologies.map((technology) => (
-                <TechnologyCard
-                  key={technology.id}
-                  technology={technology}
-                  onAdd={handleAddToStack}
-                  isAdded={stack.some(
-                    (item) => item.id === technology.id
-                  )}
-                />
-              ))}
-            </div>
+            {loading ? (
+              <div className="lg:col-span-3 flex justify-center items-center py-20">
+                <p className="text-lg font-semibold text-gray-500">
+                  Loading technologies...
+                </p>
+              </div>
+            ) : (
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {technologies.map((technology) => (
+                  <TechnologyCard
+                    key={technology.id}
+                    technology={technology}
+                    onAdd={handleAddToStack}
+                    isAdded={stack.some(
+                      (item) => item.id === technology.id
+                    )}
+                  />
+                ))}
+              </div>
+            )}
 
             <YourStack
               stack={stack}
