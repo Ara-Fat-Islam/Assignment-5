@@ -1,11 +1,11 @@
+import Nav from "./Components/Nav";
+
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center">
-      <h1 className="text-5xl font-bold text-white">
-        Dev Stack
-      </h1>
+    <div>
+      <Nav />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
