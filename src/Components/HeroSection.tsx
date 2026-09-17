@@ -11,7 +11,7 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             Build Your Ideal <br />
 
-            <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-violet-600 bg-clip-text text-transparent">
+            <span className="brand-text-gradient">
               Development Stack
             </span>
           </h1>
@@ -27,7 +27,7 @@ const HeroSection = () => {
           {/* Buttons */}
           <div className="flex justify-center md:justify-start items-center gap-5">
 
-            <button className="bg-gradient-to-r from-orange-500 via-pink-500 to-violet-600 px-5 py-2.5 rounded-lg text-white font-medium hover:opacity-90 transition">
+            <button className="brand-gradient px-5 py-2.5 rounded-lg text-white font-medium hover:opacity-90 transition">
               Explore Technologies
             </button>
 
