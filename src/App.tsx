@@ -16,20 +16,24 @@ function App() {
   }, []);
 
   const handleAddToStack = (technology: IDataType) => {
-  const exists = stack.some((item) => item.id === technology.id);
+    const exists = stack.some((item) => item.id === technology.id);
 
-  if (exists) {
-    alert(`${technology.name} is already in your stack.`);
-    return;
-  }
+    if (exists) {
+      alert(`${technology.name} is already in your stack.`);
+      return;
+    }
 
-  setStack((prev) => [...prev, technology]);
-};
+    setStack((prev) => [...prev, technology]);
+  };
 
   const handleRemoveFromStack = (id: string) => {
     setStack((prev) =>
       prev.filter((technology) => technology.id !== id)
     );
+  };
+
+  const handleRemoveAll = () => {
+    setStack([]);
   };
 
   return (
@@ -56,6 +60,9 @@ function App() {
                   key={technology.id}
                   technology={technology}
                   onAdd={handleAddToStack}
+                  isAdded={stack.some(
+                    (item) => item.id === technology.id
+                  )}
                 />
               ))}
             </div>
@@ -63,6 +70,7 @@ function App() {
             <YourStack
               stack={stack}
               onRemove={handleRemoveFromStack}
+              onRemoveAll={handleRemoveAll}
             />
           </div>
         </div>
